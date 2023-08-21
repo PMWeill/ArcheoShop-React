@@ -1,13 +1,19 @@
 import { useContext } from "react";
 import "./Panier.css";
 import { BoutiqueContext } from "../../BoutiqueContext";
+import { MenuContext } from "../../MenuContext";
 const Panier = () => {
     const boutiqueContext = useContext(BoutiqueContext);
+    const menuContext = useContext(MenuContext);
     return (
         <div className="backPanier">
             <div className="panier">
                 <h2>Votre panier</h2>
-                <p className="close">X</p>
+                <div className="close" onClick={
+                    ()=>{
+                    menuContext.fonctDisplayPanier(menuContext.displayPanier)
+                    }
+                    }>X</div>
             </div>
         </div>
     )

@@ -19,8 +19,12 @@ function Logo() {
   return <img src={image} alt="Mon Image" className="logo"></img>;
 }
 function MenuEntrie(props) {
+  const menuContext = useContext(MenuContext);
   return (
-    <a href={props.url}>
+    <a href={props.url} onClick={(e)=>{
+      e.preventDefault();
+      props.text === "Panier" ? menuContext.fonctDisplayPanier(menuContext.displayPanier) : <></>
+    }}>
       <li>{props.text}</li>
     </a>
   );

@@ -1,23 +1,28 @@
 .backPanier {
+    z-index: 111111;
+    top: 0;
     position: fixed;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.438);
+    background-color: rgba(0, 0, 0, 0.63);
     width: 100vw;
     height: 100vh;
 }
 
 .panier {
+    padding: 10px;
+    border-radius: 20px;
+    position: relative;
     background-color: white;
-    min-width: 80vw;
+    width: 80vw;
     min-height: 80vh;
 }
 .close{
     position: absolute;
     font-weight: 900;
     top: 1rem;
-    left: 1rem;
+    right: 1rem;
     font-size: 1.5rem;
 }
 .close:hover{

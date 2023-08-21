@@ -38,7 +38,8 @@ function App() {
           isActive: false,
         },
       ],
-      "burgerButton":burgerButton
+      "burgerButton":burgerButton,
+      "fonctDisplayPanier":fonctDisplayPanier
 
     }
   )
@@ -58,14 +59,14 @@ function App() {
       ...stateMenu,
       "displayUl": !disp
     })
-    // let tabMenuNavtmp = stateMenu.tabMenuNav;
-    // let stateMenuTmp = {
-    //     "displayUl": !displayUlTmp,
-    //     "tabMenuNav":tabMenuNavtmp,
-    //     "burgerButton": burgerButton
-      
-    // }
-    
+   
+  }
+  function fonctDisplayPanier(disp){
+    setStateMenu({
+      ...stateMenu,
+      "displayPanier": !disp
+    })
+   
   }
   function decrementQte(id) {
     // je fait une copie de mon tableau stateArticles car il est en lecture seul et je ne peux pas le modifier directement.
@@ -98,7 +99,12 @@ function App() {
           <Menu></Menu>
         </header>
         <main>
-          <Panier></Panier>
+          {
+            stateMenu.displayPanier ?
+             <Panier></Panier>
+             :
+             <></>
+          }
           <Boutique articles={stateArticles.articles}></Boutique>
         </main>
         <footer></footer>
