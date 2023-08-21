@@ -7,6 +7,7 @@ const Panier = () => {
         <div className="backPanier">
             <div className="panier">
                 <h2>Votre panier</h2>
+                <p className="close">X</p>
             </div>
         </div>
     )
