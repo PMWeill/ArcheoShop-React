@@ -1,0 +1,37 @@
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 10vh;
+    align-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+.card {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    background-color: black;
+    -webkit-box-shadow: 0px 0px 0px 5px #A0A0A0, inset 0px 10px 27px -8px #141414, inset 0px -10px 27px -8px #A31925, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0px 0px 0px 5px #A0A0A0, inset 0px 10px 27px -8px #141414, inset 0px -10px 27px -8px #A31925, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+   
+    width: 30%;
+    height: 70vh;
+    margin: 10px;
+    
+}
+.nom-article {
+    font-size: 2rem;
+}
+.promo {
+    /* display: block; */
+    color: red;
+    font-weight: 900;
+}
+.pas-promo {
+    /* display: none; */
+}
