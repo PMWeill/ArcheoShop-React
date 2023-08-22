@@ -1,5 +1,5 @@
 
-# Shop with React
+# Shop with React (Study Project)
 
 I realise this archeo theme shop with React.
 You can find : responsive nav, cart and contact form.
