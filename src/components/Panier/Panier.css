@@ -30,6 +30,7 @@
     cursor: pointer;
 }
 .cart{
+    margin-top: 20px;
     font-size: 1rem;
     display: flex;
     justify-content: space-evenly;
