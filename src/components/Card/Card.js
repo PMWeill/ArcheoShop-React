@@ -11,21 +11,20 @@ const Card = (props) => {
   return (
 
     <div className="card">
-      <div className="nom-article">{props.article.name}
-      </div >
-      <div className="img-article"><img src={props.article.url} alt='mon image' ></img>
-      </div>
+      <div className="nom-article">{props.article.name}</div >
+      <div className='produit'>
+      <div className="img-article"><img src={props.article.url} alt='mon image'></img></div>
+      <div className='prdDetail'>
       <div className="prix">
-        Prix : {props.article.price}€
-      </div >
+        Prix : {props.article.price}€</div >
       { props.article.promo ? <div className= "promo">promo</div > : <></>
       }
       <div className="qte">
-       Quantité restante :  {props.article.qte} Unité
-      </div >
-      <div className="cp">
-        {props.article.description}
-      </div >
+       Quantité restante :  {props.article.qte} Unité</div >
+        </div>
+        </div>
+      <div className="cp">{props.article.description}</div >
+     
       <Bouton id={props.article.id}></Bouton>
     </div >
 

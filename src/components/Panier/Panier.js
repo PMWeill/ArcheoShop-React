@@ -50,15 +50,15 @@ const Panier = () => {
                                     return (
                                         <div key={index} className="cart">
                                             <img src={url} alt={name} width="80px"></img>
-                                            <span >{name}</span>
+                                            <span className="name">{name}</span>
                                             <span  className="prixU">{priceU}€/unité</span>
                                             <button 
                                             className="boutonCart" 
                                             disabled = {isActiveplus} 
                                             onClick={()=>{boutiqueContext.decrementQte(valeur[0])}} >+</button>
-                                            <span>{qteA}</span>
+                                            <span className="qteAchat">{qteA}</span>
                                             <button 
-                                            className="boutonCart" 
+                                            className="boutonCart moins" 
                                             onClick={()=>{
                                                 boutiqueContext.incrementQte(valeur[0])
                                             }}
@@ -77,7 +77,7 @@ const Panier = () => {
                 </div>
                { 
                boutiqueContext.tabPanier.length > 0 ?
-               <div> Votre totale : {boutiqueContext.totalPanier} €</div>
+               <div className="totalCart"> Votre totale : {boutiqueContext.totalPanier} €</div>
                :
                <></>
             }

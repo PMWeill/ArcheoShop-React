@@ -5,7 +5,7 @@ import "./Boutique.css";
 function Boutique(props) {
 
     return (
-        <section>
+        <section className="shop">
             {
                 props.articles.map((value, index) => {
                     return (

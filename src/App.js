@@ -9,12 +9,12 @@ import { Panier } from './components/Panier/Panier';
 
 
 function App() {
-// declaration de mes states
+  // declaration de mes states
   const [stateArticles, setStateArticles] = useState(
     {
       "articles": articles,
-      "tabPanier":[],
-      "totalPanier":0,
+      "tabPanier": [],
+      "totalPanier": 0,
       "decrementQte": decrementQte,
       "incrementQte": incrementQte
     }
@@ -40,8 +40,8 @@ function App() {
           isActive: false,
         },
       ],
-      "burgerButton":burgerButton,
-      "fonctDisplayPanier":fonctDisplayPanier
+      "burgerButton": burgerButton,
+      "fonctDisplayPanier": fonctDisplayPanier
 
     }
   )
@@ -55,20 +55,20 @@ function App() {
     }
     return orientation;
   }
-  function burgerButton(disp){
+  function burgerButton(disp) {
     // let displayUlTmp = !stateMenu.displayUl;
     setStateMenu({
       ...stateMenu,
       "displayUl": !disp
     })
-   
+
   }
-  function fonctDisplayPanier(disp){
+  function fonctDisplayPanier(disp) {
     setStateMenu({
       ...stateMenu,
       "displayPanier": !disp
     })
-   
+
   }
   function decrementQte(id) {
     // je fait une copie de mon tableau stateArticles car il est en lecture seul et je ne peux pas le modifier directement.
@@ -82,6 +82,7 @@ function App() {
 
       }
     })
+    
     //je ajoute l'id de l'article acheté au tableau stateArticles.tabPanier
     const tmpTabPanier = stateArticles.tabPanier;
     tmpTabPanier.push(id)
@@ -89,21 +90,25 @@ function App() {
     setStateArticles({
       ...stateArticles,//le ...objet, rappelle toutes les propriétées de l'objet
       "articles": articlesTmp,
-      "tabPanier":tmpTabPanier
+      "tabPanier": tmpTabPanier
     });
+    calculTotal()
   }
-  function incrementQte(id){
+
+
+  function incrementQte(id) {
     let supprIndex;
-    stateArticles.tabPanier.find((value,index)=>{
-      if(value===id){
+    stateArticles.tabPanier.find((value, index) => {
+      if (value === id) {
         //je recupére dans mon tableau stateArticles.tabPanier l'indec de l'article à supprimer
         supprIndex = index;
-        
+
       }
     })
+    
     console.log(supprIndex);
     const tmpTabPanier = stateArticles.tabPanier;
-    tmpTabPanier.splice(supprIndex,1);
+    tmpTabPanier.splice(supprIndex, 1);
 
     let articlesTmp = stateArticles.articles;
     articlesTmp.map((valeur, index) => {
@@ -115,16 +120,26 @@ function App() {
       }
     })
 
-
-
+    
 
     setStateArticles(
       {
-      ...stateArticles,//le ...objet, rappelle toutes les propriétées de l'objet
-      "articles": articlesTmp,
-      "tabPanier":tmpTabPanier
-    }
+        ...stateArticles,//le ...objet, rappelle toutes les propriétées de l'objet
+        "articles": articlesTmp,
+        "tabPanier": tmpTabPanier
+      }
     );
+    calculTotal()
+  }
+  function calculTotal() {
+    let totalTmp = 0;
+    stateArticles.tabPanier.map((valeur,) => {
+      totalTmp += stateArticles.articles[valeur].price
+    })
+    setStateArticles(
+      {...stateArticles,
+      "totalPanier": totalTmp}
+    )
   }
 
 
@@ -139,9 +154,9 @@ function App() {
         <main>
           {
             stateMenu.displayPanier ?
-             <Panier></Panier>
-             :
-             <></>
+              <Panier></Panier>
+              :
+              <></>
           }
           <Boutique articles={stateArticles.articles}></Boutique>
         </main>
