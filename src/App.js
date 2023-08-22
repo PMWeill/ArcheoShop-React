@@ -14,7 +14,9 @@ function App() {
     {
       "articles": articles,
       "tabPanier":[],
-      "decrementQte": decrementQte
+      "totalPanier":0,
+      "decrementQte": decrementQte,
+      "incrementQte": incrementQte
     }
   );
   const [stateMenu, setStateMenu] = useState(
@@ -80,14 +82,50 @@ function App() {
 
       }
     })
+    //je ajoute l'id de l'article acheté au tableau stateArticles.tabPanier
+    const tmpTabPanier = stateArticles.tabPanier;
+    tmpTabPanier.push(id)
     // je réasigne le nvx tableau article modifié à mon stateArticles grâce à sa fonction setStateArticles
     setStateArticles({
       ...stateArticles,//le ...objet, rappelle toutes les propriétées de l'objet
-      "articles": articlesTmp
+      "articles": articlesTmp,
+      "tabPanier":tmpTabPanier
     });
   }
+  function incrementQte(id){
+    let supprIndex;
+    stateArticles.tabPanier.find((value,index)=>{
+      if(value===id){
+        //je recupére dans mon tableau stateArticles.tabPanier l'indec de l'article à supprimer
+        supprIndex = index;
+        
+      }
+    })
+    console.log(supprIndex);
+    const tmpTabPanier = stateArticles.tabPanier;
+    tmpTabPanier.splice(supprIndex,1);
 
-  
+    let articlesTmp = stateArticles.articles;
+    articlesTmp.map((valeur, index) => {
+
+      if (index === id) {
+        valeur.qte > 0 && ++valeur.qte;
+        // ou  valeur.qte === 0 ? valeur.qte = 0 : valeur.qte -= 1;
+
+      }
+    })
+
+
+
+
+    setStateArticles(
+      {
+      ...stateArticles,//le ...objet, rappelle toutes les propriétées de l'objet
+      "articles": articlesTmp,
+      "tabPanier":tmpTabPanier
+    }
+    );
+  }
 
 
 

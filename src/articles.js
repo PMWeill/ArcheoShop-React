@@ -5,7 +5,7 @@ const articles = [
         url:"assets/img/céram méro.jpg",
         price: 20,
         promo: true,
-        qte: 10,
+        qte: 30,
         description: "Ceci est une reproduction"
     },
     {
@@ -14,7 +14,7 @@ const articles = [
         url:"assets/img/sigillé pm.jpg",
         price: 30,
         promo: false,
-        qte: 10,
+        qte: 30,
         description: "Ceci est une reproduction"
     },
     {
@@ -23,7 +23,7 @@ const articles = [
         url:"assets/img/sigillé gm.jpg",
         price: 90,
         promo: false,
-        qte: 10,
+        qte: 30,
         description: "Ceci est une reproduction"
     },
     {
@@ -32,7 +32,7 @@ const articles = [
         url:"assets/img/statuette.jpg",
         price: 50,
         promo: false,
-        qte: 10,
+        qte: 30,
         description: "Ceci est une reproduction"
     },
     {
@@ -41,7 +41,7 @@ const articles = [
         url:"assets/img/vase méro.jpg",
         price: 40,
         promo: false,
-        qte: 10,
+        qte: 30,
         description: "Ceci est une reproduction"
     },
     {
@@ -50,8 +50,8 @@ const articles = [
         url:"assets/img/livre briga.jpg",
         price: 30,
         promo: false,
-        qte: 10,
-        description: "Ceci est une reproduction"
+        qte: 30,
+        description: "Tous savoir sur Briga"
     },
     {
         id: 6,
@@ -59,8 +59,8 @@ const articles = [
         url:"assets/img/dvd briga.jpg",
         price: 15,
         promo: false,
-        qte: 10,
-        description: "Ceci est une reproduction"
+        qte: 30,
+        description: "Briga le Film"
     },
     {
         id: 7,
@@ -68,8 +68,8 @@ const articles = [
         url:"assets/img/carteposatle briga.jpg",
         price: 2,
         promo: false,
-        qte: 10,
-        description: "Ceci est une reproduction"
+        qte: 30,
+        description: "Pour vos amis"
     }
 ]
 export  {articles}

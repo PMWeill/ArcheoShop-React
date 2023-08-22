@@ -40,7 +40,7 @@ function Menu() {
     setOrientation(responsive());
     setDisplayUl(!orientation);
   }); */
-console.dir(menuContext);
+
   return (
     <nav>
       <Logo></Logo>
