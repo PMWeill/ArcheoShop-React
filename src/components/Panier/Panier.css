@@ -1,5 +1,5 @@
 .backPanier {
-    z-index: 111111;
+    z-index: 111;
     top: 0;
     position: fixed;
     display: flex;
@@ -8,7 +8,7 @@
     background-color: rgba(0, 0, 0, 0.63);
     width: 100vw;
     height: 100vh;
-    overflow-y: scroll;
+
 }
 
 .panier {
@@ -17,10 +17,23 @@
     position: relative;
     background-color: white;
     width: 80vw;
-    min-height: 80vh;
-
+    height: 80vh;
+    overflow-y: scroll;
+    animation: intro 1s ease 0s 1 normal forwards;
 }
+@keyframes intro {
+	0% {
+		opacity: 0;
+		transform: rotateX(70deg);
+		transform-origin: top;
+	}
 
+	100% {
+		opacity: 1;
+		transform: rotateX(0deg);
+		transform-origin: top;
+	}
+}
 .close {
     position: absolute;
     font-weight: 900;
@@ -39,11 +52,26 @@
     margin-top: 20px;
     font-size: .8rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
 
 }
 
+.cart img {
+    border-radius: 20px;
+}
+.placecartname{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 30%;
+}
+.placecartbuy{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+}
 .name {
     width: 30%;
     margin-left: 10px;
@@ -54,10 +82,7 @@
     margin-left: 10px;
 }
 
-.prixT {
-    width: 10%;
-    margin-left: 10px;
-}
+
 
 .boutonCart {
     display: flex;
@@ -66,12 +91,25 @@
     color: white;
     font-weight: 900;
     font-size: 1rem;
-    background-color: blueviolet;
     height: 30px;
     width: 50px;
     border-radius: 10px;
     padding: .5rem;
     margin: .5rem;
+    background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+    border: 0;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    justify-content: center;
+    line-height: 1em;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    background-color: rgb(5, 6, 45);
 }
 
 .moins {
@@ -79,9 +117,10 @@
 }
 
 .boutonCart:hover {
-    background-color: black;
+    background: black;
 }
-.qteAchat{
+
+.qteAchat {
     margin: 0 10px;
 }
 
@@ -90,64 +129,78 @@
     font-weight: 700;
     font-size: 2rem;
 }
+
 @media screen and (min-width:576px) {
 
-    .cart {
-        margin-top: 50px;
-        font-size: 1rem;
+  
+    .placecartname{
         display: flex;
+        flex-direction: row;
+        gap: 50px;
+    }
+    .placecartbuy{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+   
+
+}
+@media screen and (min-width:769px) {
+
+  
+    .placecartname{
+        display: flex;
+        flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
-    
+        gap: 50px;
+        width: 30%;
     }
-    
+    .placecartbuy{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 30%;
+    }
+
     .name {
-        width: 60%;
-        margin-left: 50px;
+        width: 50%;
+        margin-left: 10px;
+        font-size: 1.5vw;
     }
     
     .prixU {
-        width: 10%;
-        margin-left: 50px;
+        width: 20%;
+        margin-left: 10px;
+        font-size: 1.5vw;
     }
     
     .prixT {
         width: 10%;
-        margin-left: 50px;
+        margin-left: 10px;
+        font-size: 1.5vw;
     }
     
-    .boutonCart {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-weight: 900;
-        font-size: 1.5rem;
-        background-color: blueviolet;
-        height: 30px;
-        width: 50px;
-        border-radius: 10px;
-        padding: .5rem;
-        margin: .5rem;
+    .qteAchat {
+        margin: 0 10px;
+        font-size: 1.5vw;
     }
     
-    .moins {
-        padding-bottom: 15px;
-    }
-    
-    .boutonCart:hover {
-        background-color: black;
-    }
-    .qteAchat{
-        margin: 0 50px;
-    }
-    
-    .totalCart {
-        margin-top: 3%;
-        font-size: 900;
-        font-size: 2rem;
-    }
-
-
 
 }
+
+
+
+
+
+
+
+
+
+
+
+

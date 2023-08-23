@@ -49,9 +49,12 @@ const Panier = () => {
                                 
                                     return (
                                         <div key={index} className="cart">
-                                            <img src={url} alt={name} width="80px"></img>
+                                            <img src={url} alt={name} width="100px"></img>
+                                            <div className="placecartname">
                                             <span className="name">{name}</span>
                                             <span  className="prixU">{priceU}€/unité</span>
+                                            </div >
+                                            <div className="placecartbuy">
                                             <button 
                                             className="boutonCart" 
                                             disabled = {isActiveplus} 
@@ -64,7 +67,7 @@ const Panier = () => {
                                             }}
                                             >-</button>
                                             <span className="prixT">{priceT}€</span>
-                                            
+                                            </div>
 
                                         </div>
                                     )

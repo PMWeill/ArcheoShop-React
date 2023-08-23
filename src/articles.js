@@ -6,25 +6,25 @@ const articles = [
         price: 20,
         promo: true,
         qte: 30,
-        description: "Ceci est une reproduction"
+        description: "Magnifique reproduction de véritable céramique retrouvée dans divers fouilles archéologiques."
     },
     {
         id: 1,
-        name:"Céramique Sigillé petit modéle",
+        name:"Céramique Sigillée. Petit modéle",
         url:"assets/img/sigillé pm.jpg",
         price: 30,
         promo: false,
         qte: 30,
-        description: "Ceci est une reproduction"
+        description: "Magnifique reproduction de véritable céramique retrouvée dans divers fouilles archéologiques."
     },
     {
         id: 2,
-        name:"Céramique Sigillé grand modèle",
+        name:"Céramique Sigillée. Grand modèle",
         url:"assets/img/sigillé gm.jpg",
         price: 90,
         promo: false,
         qte: 30,
-        description: "Ceci est une reproduction"
+        description: "Magnifique reproduction de véritable céramique retrouvée dans divers fouilles archéologiques."
     },
     {
         id: 3,
@@ -33,7 +33,7 @@ const articles = [
         price: 50,
         promo: false,
         qte: 30,
-        description: "Ceci est une reproduction"
+        description: "Magnifique reproduction de véritable statuette en terre blanche de l'Allié retrouvée dans divers fouilles archéologiques."
     },
     {
         id: 4,
@@ -42,7 +42,7 @@ const articles = [
         price: 40,
         promo: false,
         qte: 30,
-        description: "Ceci est une reproduction"
+        description: "Magnifique reproduction de véritable verrerie retrouvée dans divers fouilles archéologiques."
     },
     {
         id: 5,
@@ -51,7 +51,7 @@ const articles = [
         price: 30,
         promo: false,
         qte: 30,
-        description: "Tous savoir sur Briga"
+        description: "Pour tous savoir sur Briga"
     },
     {
         id: 6,

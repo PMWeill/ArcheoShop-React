@@ -17,10 +17,10 @@ const Card = (props) => {
       <div className='prdDetail'>
       <div className="prix">
         Prix : {props.article.price}€</div >
-      { props.article.promo ? <div className= "promo">promo</div > : <></>
+      { props.article.promo ? <div className= "promo">Promo</div > : <></>
       }
       <div className="qte">
-       Quantité restante :  {props.article.qte} Unité</div >
+       Quantité restante :  {props.article.qte} </div >
         </div>
         </div>
       <div className="cp">{props.article.description}</div >

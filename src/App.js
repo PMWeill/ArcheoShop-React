@@ -64,6 +64,13 @@ function App() {
 
   }
   function fonctDisplayPanier(disp) {
+    if(disp) {
+      document.body.style.height = "auto";
+      document.body.style.overflow = "visible";
+    }else {
+      document.body.style.height = "100vh";
+      document.body.style.overflow = "hidden";
+    }
     setStateMenu({
       ...stateMenu,
       "displayPanier": !disp
